@@ -57,30 +57,30 @@ export function HeroSection() {
 
           {/* Tech Stack Icons */}
           <div className="flex items-center justify-center space-x-8 opacity-60">
-            <div className="flex flex-col items-center">
+            <a href='https://react.dev/' target='_blank' className="flex flex-col items-center cursor-pointer transition-all duration-300 hover:-translate-y-1">
               <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-2">
                 <span className="text-blue-600 font-bold text-lg">R</span>
               </div>
               <span className="text-sm text-gray-500">React</span>
-            </div>
-            <div className="flex flex-col items-center">
+            </a>
+            <a href='https://nextjs.org/' target='_blank' className="flex flex-col items-center cursor-pointer transition-all duration-300 hover:-translate-y-1">
               <div className="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center mb-2">
                 <span className="text-gray-600 font-bold text-lg">N</span>
               </div>
               <span className="text-sm text-gray-500">Next.js</span>
-            </div>
-            <div className="flex flex-col items-center">
+            </a>
+            <a href='https://www.typescriptlang.org/' target='_blank' className="flex flex-col items-center cursor-pointer transition-all duration-300 hover:-translate-y-1">
               <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-2">
                 <span className="text-blue-600 font-bold text-lg">TS</span>
               </div>
               <span className="text-sm text-gray-500">TypeScript</span>
-            </div>
-            <div className="flex flex-col items-center">
+            </a>
+            <a href='https://tailwindcss.com/' target='_blank' className="flex flex-col items-center cursor-pointer transition-all duration-300 hover:-translate-y-1">
               <div className="w-12 h-12 bg-cyan-100 rounded-lg flex items-center justify-center mb-2">
                 <span className="text-cyan-600 font-bold text-lg">T</span>
               </div>
               <span className="text-sm text-gray-500">Tailwind</span>
-            </div>
+            </a>
           </div>
         </div>
       </div>
