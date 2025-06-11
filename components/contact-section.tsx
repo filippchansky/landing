@@ -51,32 +51,32 @@ export function ContactSection() {
   ];
 
   return (
-    <section id='contact' className='py-20 bg-gray-50'>
-      <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
+    <section id="contact" className="bg-gray-50 py-20">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className='text-center mb-16'>
-          <h2 className='text-3xl sm:text-4xl font-bold text-gray-900 mb-4'>
+        <div className="mb-16 text-center">
+          <h2 className="mb-4 text-3xl font-bold text-gray-900 sm:text-4xl">
             {t('contact.title')}
           </h2>
-          <p className='text-lg text-gray-600 max-w-2xl mx-auto'>{t('contact.subtitle')}</p>
+          <p className="mx-auto max-w-2xl text-lg text-gray-600">{t('contact.subtitle')}</p>
         </div>
 
-        <div className='grid grid-cols-1 lg:grid-cols-3 gap-8'>
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
           {/* Contact Info */}
-          <div className='space-y-6'>
-            <h3 className='text-xl font-semibold text-gray-900 mb-6'>{t('contact.info.title')}</h3>
+          <div className="space-y-6">
+            <h3 className="mb-6 text-xl font-semibold text-gray-900">{t('contact.info.title')}</h3>
             {contactInfo.map((info, index) => {
               const Icon = info.icon;
               return (
-                <div key={index} className='flex items-start space-x-4'>
+                <div key={index} className="flex items-start space-x-4">
                   <div
-                    className={`w-12 h-12 rounded-lg ${info.color} flex items-center justify-center flex-shrink-0`}
+                    className={`h-12 w-12 rounded-lg ${info.color} flex flex-shrink-0 items-center justify-center`}
                   >
-                    <Icon className='w-6 h-6' />
+                    <Icon className="h-6 w-6" />
                   </div>
                   <div>
-                    <div className='font-medium text-gray-900'>{info.title}</div>
-                    <div className='text-gray-600'>{info.value}</div>
+                    <div className="font-medium text-gray-900">{info.title}</div>
+                    <div className="text-gray-600">{info.value}</div>
                   </div>
                 </div>
               );
@@ -84,69 +84,69 @@ export function ContactSection() {
           </div>
 
           {/* Contact Form */}
-          <div className='lg:col-span-2'>
+          <div className="lg:col-span-2">
             <Card>
-              <CardContent className='p-8'>
-                <form onSubmit={handleSubmit} className='space-y-6'>
-                  <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
+              <CardContent className="p-8">
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                     <div>
                       <label
-                        htmlFor='name'
-                        className='block text-sm font-medium text-gray-700 mb-2'
+                        htmlFor="name"
+                        className="mb-2 block text-sm font-medium text-gray-700"
                       >
                         {t('contact.name')}
                       </label>
                       <Input
-                        id='name'
-                        name='name'
-                        type='text'
+                        id="name"
+                        name="name"
+                        type="text"
                         required
                         value={formData.name}
                         onChange={handleChange}
-                        className='w-full'
+                        className="w-full"
                       />
                     </div>
                     <div>
                       <label
-                        htmlFor='email'
-                        className='block text-sm font-medium text-gray-700 mb-2'
+                        htmlFor="email"
+                        className="mb-2 block text-sm font-medium text-gray-700"
                       >
                         {t('contact.email')}
                       </label>
                       <Input
-                        id='email'
-                        name='email'
-                        type='email'
+                        id="email"
+                        name="email"
+                        type="email"
                         required
                         value={formData.email}
                         onChange={handleChange}
-                        className='w-full'
+                        className="w-full"
                       />
                     </div>
                   </div>
                   <div>
                     <label
-                      htmlFor='message'
-                      className='block text-sm font-medium text-gray-700 mb-2'
+                      htmlFor="message"
+                      className="mb-2 block text-sm font-medium text-gray-700"
                     >
                       {t('contact.message')}
                     </label>
                     <Textarea
-                      id='message'
-                      name='message'
+                      id="message"
+                      name="message"
                       required
                       rows={5}
                       value={formData.message}
                       onChange={handleChange}
-                      className='w-full'
+                      className="w-full"
                     />
                   </div>
                   <Button
-                    type='submit'
-                    size='lg'
-                    className='bg-blue-600 hover:bg-blue-700 text-white w-full md:w-auto'
+                    type="submit"
+                    size="lg"
+                    className="w-full bg-blue-600 text-white hover:bg-blue-700 md:w-auto"
                   >
-                    <Send className='w-4 h-4 mr-2' />
+                    <Send className="mr-2 h-4 w-4" />
                     {t('contact.send')}
                   </Button>
                 </form>

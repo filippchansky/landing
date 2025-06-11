@@ -19,13 +19,14 @@ const translations = {
     'nav.portfolio': 'Портфолио',
     'nav.about': 'О нас',
     'nav.contact': 'Контакты',
-    
+
     // Hero Section
     'hero.title': 'Создаем современные веб-решения',
-    'hero.subtitle': 'Профессиональная разработка сайтов и веб-приложений на React, Next.js и современных технологиях',
+    'hero.subtitle':
+      'Профессиональная разработка сайтов и веб-приложений на React, Next.js и современных технологиях',
     'hero.cta': 'Обсудить проект',
     'hero.cta2': 'Посмотреть работы',
-    
+
     // Services
     'services.title': 'Наши услуги',
     'services.subtitle': 'Полный цикл разработки от идеи до запуска',
@@ -37,7 +38,7 @@ const translations = {
     'services.design.desc': 'Современный дизайн интерфейсов с фокусом на пользователе',
     'services.support.title': 'Поддержка',
     'services.support.desc': 'Техническая поддержка и развитие ваших проектов',
-    
+
     // Portfolio
     'portfolio.title': 'Портфолио',
     'portfolio.subtitle': 'Примеры наших работ',
@@ -47,15 +48,16 @@ const translations = {
     'portfolio.project2.desc': 'Веб-приложение для управления проектами',
     'portfolio.project3.title': 'Корпоративный сайт',
     'portfolio.project3.desc': 'Современный корпоративный сайт с CMS',
-    
+
     // About
     'about.title': 'О нашей студии',
     'about.subtitle': 'Мы команда профессиональных разработчиков',
-    'about.text': 'Специализируемся на создании современных веб-решений используя передовые технологии. Наш опыт позволяет реализовывать проекты любой сложности - от простых сайтов-визиток до сложных веб-приложений.',
+    'about.text':
+      'Специализируемся на создании современных веб-решений используя передовые технологии. Наш опыт позволяет реализовывать проекты любой сложности - от простых сайтов-визиток до сложных веб-приложений.',
     'about.experience': 'Лет опыта',
     'about.projects': 'Проектов',
     'about.clients': 'Клиентов',
-    
+
     // Contact
     'contact.title': 'Связаться с нами',
     'contact.subtitle': 'Готовы обсудить ваш проект',
@@ -67,7 +69,7 @@ const translations = {
     'contact.info.address': 'Москва, Россия',
     'contact.info.phone': '+7 (999) 123-45-67',
     'contact.info.email': 'hello@webstudio.ru',
-    
+
     // Footer
     'footer.rights': 'Все права защищены',
   },
@@ -77,13 +79,14 @@ const translations = {
     'nav.portfolio': 'Portfolio',
     'nav.about': 'About',
     'nav.contact': 'Contacts',
-    
+
     // Hero Section
     'hero.title': 'We Create Modern Web Solutions',
-    'hero.subtitle': 'Professional website and web application development using React, Next.js and modern technologies',
+    'hero.subtitle':
+      'Professional website and web application development using React, Next.js and modern technologies',
     'hero.cta': 'Discuss Project',
     'hero.cta2': 'View Work',
-    
+
     // Services
     'services.title': 'Our Services',
     'services.subtitle': 'Full development cycle from idea to launch',
@@ -95,7 +98,7 @@ const translations = {
     'services.design.desc': 'Modern interface design with user-focused approach',
     'services.support.title': 'Support',
     'services.support.desc': 'Technical support and development of your projects',
-    
+
     // Portfolio
     'portfolio.title': 'Portfolio',
     'portfolio.subtitle': 'Examples of our work',
@@ -105,15 +108,16 @@ const translations = {
     'portfolio.project2.desc': 'Web application for project management',
     'portfolio.project3.title': 'Corporate Website',
     'portfolio.project3.desc': 'Modern corporate website with CMS',
-    
+
     // About
     'about.title': 'About Our Studio',
     'about.subtitle': 'We are a team of professional developers',
-    'about.text': 'We specialize in creating modern web solutions using cutting-edge technologies. Our experience allows us to implement projects of any complexity - from simple business cards to complex web applications.',
+    'about.text':
+      'We specialize in creating modern web solutions using cutting-edge technologies. Our experience allows us to implement projects of any complexity - from simple business cards to complex web applications.',
     'about.experience': 'Years Experience',
     'about.projects': 'Projects',
     'about.clients': 'Clients',
-    
+
     // Contact
     'contact.title': 'Contact Us',
     'contact.subtitle': 'Ready to discuss your project',
@@ -125,7 +129,7 @@ const translations = {
     'contact.info.address': 'Moscow, Russia',
     'contact.info.phone': '+7 (999) 123-45-67',
     'contact.info.email': 'hello@webstudio.ru',
-    
+
     // Footer
     'footer.rights': 'All rights reserved',
   },
@@ -135,7 +139,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const [language, setLanguage] = useState<Language>('ru');
 
   const t = (key: string): string => {
-    return translations[language][key as keyof typeof translations[typeof language]] || key;
+    return translations[language][key as keyof (typeof translations)[typeof language]] || key;
   };
 
   return (

@@ -36,16 +36,16 @@ export function ServicesSection() {
   ];
 
   return (
-      <motion.section
-        initial={{ opacity: 0, y: 100, filter: 'blur(20px)' }}
-        whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-        transition={{ duration: 0.5 }}
-        viewport={{ once: true, amount: 0.1 }}
-        className="bg-white py-20"
-        id='services'
-      >
-        {/* Контент секции */}
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <motion.section
+      initial={{ opacity: 0, y: 100, filter: 'blur(20px)' }}
+      whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+      transition={{ duration: 0.5 }}
+      viewport={{ once: true, amount: 0.1 }}
+      className="bg-white py-20"
+      id="services"
+    >
+      {/* Контент секции */}
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="mb-16 text-center">
           <h2 className="mb-4 text-3xl font-bold text-gray-900 sm:text-4xl">
@@ -77,6 +77,6 @@ export function ServicesSection() {
           })}
         </div>
       </div>
-      </motion.section>  
+    </motion.section>
   );
 }

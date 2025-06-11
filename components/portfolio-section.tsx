@@ -20,15 +20,13 @@ export function PortfolioSection() {
     {
       title: t('portfolio.project2.title'),
       description: t('portfolio.project2.desc'),
-      image:
-        'image/saas.webp',
+      image: 'image/saas.webp',
       tags: ['React', 'Node.js', 'PostgreSQL', 'Docker'],
     },
     {
       title: t('portfolio.project3.title'),
       description: t('portfolio.project3.desc'),
-      image:
-        'image/corporate.webp',
+      image: 'image/corporate.webp',
       tags: ['Next.js', 'TypeScript', 'Sanity CMS'],
     },
   ];

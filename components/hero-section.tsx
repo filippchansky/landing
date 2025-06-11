@@ -49,8 +49,16 @@ export function HeroSection() {
           <div className="mb-12 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <motion.div
               initial={{ y: 200, opacity: 0, filter: 'blur(20px)' }}
-              animate={{ y: 0, opacity: 1, filter: 'blur(0px)', transition: { ease: 'easeInOut', duration: 0.75 }, }}
-              whileHover={{ rotate: -5, transition: { type: 'spring', stiffness: 300, damping: 20 } }}
+              animate={{
+                y: 0,
+                opacity: 1,
+                filter: 'blur(0px)',
+                transition: { ease: 'easeInOut', duration: 0.75 },
+              }}
+              whileHover={{
+                rotate: -5,
+                transition: { type: 'spring', stiffness: 300, damping: 20 },
+              }}
             >
               <Button
                 size="lg"
@@ -63,8 +71,16 @@ export function HeroSection() {
             </motion.div>
             <motion.div
               initial={{ y: 200, opacity: 0, filter: 'blur(20px)' }}
-              animate={{ y: 0, opacity: 1, filter: 'blur(0px)', transition: { ease: 'easeInOut', duration: 1 }, }}
-               whileHover={{ rotate: 5, transition: { type: 'spring', stiffness: 300, damping: 20 }}}
+              animate={{
+                y: 0,
+                opacity: 1,
+                filter: 'blur(0px)',
+                transition: { ease: 'easeInOut', duration: 1 },
+              }}
+              whileHover={{
+                rotate: 5,
+                transition: { type: 'spring', stiffness: 300, damping: 20 },
+              }}
             >
               <Button
                 variant="outline"
