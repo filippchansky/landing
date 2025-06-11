@@ -14,22 +14,21 @@ export function PortfolioSection() {
     {
       title: t('portfolio.project1.title'),
       description: t('portfolio.project1.desc'),
-      image:
-        'https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: 'image/mobile.webp',
       tags: ['React', 'Next.js', 'Stripe', 'MongoDB'],
     },
     {
       title: t('portfolio.project2.title'),
       description: t('portfolio.project2.desc'),
       image:
-        'https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=800',
+        'image/saas.webp',
       tags: ['React', 'Node.js', 'PostgreSQL', 'Docker'],
     },
     {
       title: t('portfolio.project3.title'),
       description: t('portfolio.project3.desc'),
       image:
-        'https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=800',
+        'image/corporate.webp',
       tags: ['Next.js', 'TypeScript', 'Sanity CMS'],
     },
   ];

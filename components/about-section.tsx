@@ -3,6 +3,7 @@
 import { Award, Users, Briefcase } from 'lucide-react';
 import { useLanguage } from '@/lib/language';
 import { motion } from 'motion/react';
+import Image from 'next/image';
 
 export function AboutSection() {
   const { t } = useLanguage();
@@ -64,8 +65,10 @@ export function AboutSection() {
           {/* Image */}
           <div className="relative">
             <div className="relative overflow-hidden rounded-2xl">
-              <img
-                src="https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg?auto=compress&cs=tinysrgb&w=800"
+              <Image
+                src="image/team.jpeg"
+                width={100}
+                height={100}
                 alt="Team working"
                 className="h-96 w-full object-cover"
               />
