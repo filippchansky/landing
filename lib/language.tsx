@@ -76,7 +76,7 @@ const translations = {
     'nav.services': 'Services',
     'nav.portfolio': 'Portfolio',
     'nav.about': 'About',
-    'nav.contact': 'Contact',
+    'nav.contact': 'Contacts',
     
     // Hero Section
     'hero.title': 'We Create Modern Web Solutions',

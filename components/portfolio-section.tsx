@@ -4,6 +4,8 @@ import { ExternalLink, Github } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/lib/language';
+import Image from 'next/image';
+import { motion } from 'motion/react';
 
 export function PortfolioSection() {
   const { t } = useLanguage();
@@ -12,72 +14,78 @@ export function PortfolioSection() {
     {
       title: t('portfolio.project1.title'),
       description: t('portfolio.project1.desc'),
-      image: 'https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image:
+        'https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=800',
       tags: ['React', 'Next.js', 'Stripe', 'MongoDB'],
     },
     {
       title: t('portfolio.project2.title'),
       description: t('portfolio.project2.desc'),
-      image: 'https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image:
+        'https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=800',
       tags: ['React', 'Node.js', 'PostgreSQL', 'Docker'],
     },
     {
       title: t('portfolio.project3.title'),
       description: t('portfolio.project3.desc'),
-      image: 'https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image:
+        'https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=800',
       tags: ['Next.js', 'TypeScript', 'Sanity CMS'],
     },
   ];
 
   return (
-    <section id="portfolio" className="py-20 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <motion.section
+      initial={{ opacity: 0, y: 100, filter: 'blur(20px)' }}
+      whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+      transition={{ duration: 0.5 }}
+      viewport={{ once: true, amount: 0.1 }}
+      className="bg-gray-50 py-20"
+      id="portfolio"
+    >
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+        <div className="mb-16 text-center">
+          <h2 className="mb-4 text-3xl font-bold text-gray-900 sm:text-4xl">
             {t('portfolio.title')}
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            {t('portfolio.subtitle')}
-          </p>
+          <p className="mx-auto max-w-2xl text-lg text-gray-600">{t('portfolio.subtitle')}</p>
         </div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((project, index) => (
             <Card
               key={index}
-              className="group overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
+              className="group overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
             >
               <div className="relative overflow-hidden">
-                <img
+                <Image
+                  width={50}
+                  height={50}
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                  className="h-48 w-full object-cover transition-transform duration-300 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center space-x-4">
+                <div className="absolute inset-0 flex items-center justify-center space-x-4 bg-black/60 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                   <Button size="sm" variant="secondary">
-                    <ExternalLink className="w-4 h-4 mr-2" />
+                    <ExternalLink className="mr-2 h-4 w-4" />
                     Live
                   </Button>
                   <Button size="sm" variant="secondary">
-                    <Github className="w-4 h-4 mr-2" />
+                    <Github className="mr-2 h-4 w-4" />
                     Code
                   </Button>
                 </div>
               </div>
               <CardContent className="p-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                  {project.title}
-                </h3>
-                <p className="text-gray-600 mb-4 leading-relaxed">
-                  {project.description}
-                </p>
+                <h3 className="mb-3 text-xl font-semibold text-gray-900">{project.title}</h3>
+                <p className="mb-4 leading-relaxed text-gray-600">{project.description}</p>
                 <div className="flex flex-wrap gap-2">
                   {project.tags.map((tag, tagIndex) => (
                     <span
                       key={tagIndex}
-                      className="px-3 py-1 bg-blue-100 text-blue-600 text-sm rounded-full"
+                      className="rounded-full bg-blue-100 px-3 py-1 text-sm text-blue-600"
                     >
                       {tag}
                     </span>
@@ -88,6 +96,6 @@ export function PortfolioSection() {
           ))}
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }
