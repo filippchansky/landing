@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useLanguage } from '@/lib/language';
+import { motion } from 'motion/react';
 
 export function ContactSection() {
   const { t } = useLanguage();
@@ -15,6 +16,7 @@ export function ContactSection() {
     email: '',
     message: '',
   });
+  let durationCount = 1;
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -51,7 +53,14 @@ export function ContactSection() {
   ];
 
   return (
-    <section id="contact" className="bg-gray-50 py-20">
+    <motion.section
+      initial={{ opacity: 0, y: 100, filter: 'blur(20px)' }}
+      whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+      transition={{ duration: 0.5 }}
+      viewport={{ once: true, amount: 0.1 }}
+      className="bg-gray-50 py-20"
+      id="contact"
+    >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="mb-16 text-center">
@@ -67,8 +76,16 @@ export function ContactSection() {
             <h3 className="mb-6 text-xl font-semibold text-gray-900">{t('contact.info.title')}</h3>
             {contactInfo.map((info, index) => {
               const Icon = info.icon;
+              durationCount += 0.2;
               return (
-                <div key={index} className="flex items-start space-x-4">
+                <motion.div
+                  key={index}
+                  className="flex items-start space-x-4"
+                  initial={{ x: -200, opacity: 0, filter: 'blur(20px)' }}
+                  whileInView={{ x: 0, opacity: 1, filter: 'blur(0px)' }}
+                  viewport={{ once: true, amount: 0.1 }}
+                  transition={{ ease: 'easeInOut', duration: durationCount }}
+                >
                   <div
                     className={`h-12 w-12 rounded-lg ${info.color} flex flex-shrink-0 items-center justify-center`}
                   >
@@ -78,13 +95,19 @@ export function ContactSection() {
                     <div className="font-medium text-gray-900">{info.title}</div>
                     <div className="text-gray-600">{info.value}</div>
                   </div>
-                </div>
+                </motion.div>
               );
             })}
           </div>
 
           {/* Contact Form */}
-          <div className="lg:col-span-2">
+          <motion.div
+            className="lg:col-span-2"
+            initial={{ x: 200, opacity: 0, filter: 'blur(20px)' }}
+            whileInView={{ x: 0, opacity: 1, filter: 'blur(0px)' }}
+            viewport={{ once: true, amount: 0.1 }}
+            transition={{ ease: 'easeInOut', duration: 1.2 }}
+          >
             <Card>
               <CardContent className="p-8">
                 <form onSubmit={handleSubmit} className="space-y-6">
@@ -152,9 +175,9 @@ export function ContactSection() {
                 </form>
               </CardContent>
             </Card>
-          </div>
+          </motion.div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }

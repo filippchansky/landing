@@ -7,6 +7,7 @@ import { motion } from 'motion/react';
 
 export function ServicesSection() {
   const { t } = useLanguage();
+  let durationCount = 0
 
   const services = [
     {
@@ -57,22 +58,29 @@ export function ServicesSection() {
         {/* Services Grid */}
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
           {services.map((service, index) => {
-            const Icon = service.icon;
+            const Icon = service.icon; 
+            durationCount += 0.3
             return (
-              <Card
+              <motion.div
                 key={index}
-                className="group border-gray-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+                initial={{ opacity: 0, y: 100, filter: 'blur(20px)' }}
+                whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                transition={{ duration: durationCount }}
+                viewport={{ once: true, amount: 0.1 }}
+                className='flex'
               >
-                <CardContent className="p-6">
-                  <div
-                    className={`h-12 w-12 rounded-lg ${service.color} mb-4 flex items-center justify-center`}
-                  >
-                    <Icon className="h-6 w-6" />
-                  </div>
-                  <h3 className="mb-3 text-xl font-semibold text-gray-900">{service.title}</h3>
-                  <p className="leading-relaxed text-gray-600">{service.description}</p>
-                </CardContent>
-              </Card>
+                <Card className="group border-gray-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+                  <CardContent className="p-6">
+                    <div
+                      className={`h-12 w-12 rounded-lg ${service.color} mb-4 flex items-center justify-center`}
+                    >
+                      <Icon className="h-6 w-6" />
+                    </div>
+                    <h3 className="mb-3 text-xl font-semibold text-gray-900">{service.title}</h3>
+                    <p className="leading-relaxed text-gray-600">{service.description}</p>
+                  </CardContent>
+                </Card>
+              </motion.div>
             );
           })}
         </div>
