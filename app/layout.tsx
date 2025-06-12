@@ -38,6 +38,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </Script>
       </head>
       <body className={inter.className}>
+        <noscript>
+          <div>
+            <img
+              src="https://mc.yandex.ru/watch/102609129"
+              style={{ position: 'absolute', left: '-9999px' }}
+              alt=""
+            />
+          </div>
+        </noscript>
         <Analytics />
         <LanguageProvider>{children}</LanguageProvider>
       </body>
